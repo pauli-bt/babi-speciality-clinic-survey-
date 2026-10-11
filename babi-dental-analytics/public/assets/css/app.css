@@ -1,0 +1,33 @@
+/* Palette sampled from the official logo (navy circle ~ #173B77). */
+:root {
+  --brand: #173b77;
+  --brand-dark: #112d5c;
+  --brand-tint: #e8eef8;
+  --bs-primary: #173b77;
+  --bs-primary-rgb: 23, 59, 119;
+  --bs-link-color: #173b77;
+  --bs-link-color-rgb: 23, 59, 119;
+  --bs-link-hover-color-rgb: 17, 45, 92;
+  --bs-link-hover-color: #112d5c;
+  --bs-border-radius: 0.375rem;
+}
+body { background-color: #f5f7fa; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: #1f2937; }
+.text-brand { color: var(--brand) !important; }
+.btn-primary { --bs-btn-bg: #173b77; --bs-btn-border-color: #173b77; --bs-btn-hover-bg: #112d5c; --bs-btn-hover-border-color: #112d5c; --bs-btn-active-bg: #0d2347; --bs-btn-active-border-color: #0d2347; --bs-btn-disabled-bg: #173b77; --bs-btn-disabled-border-color: #173b77; }
+.btn-outline-primary { --bs-btn-color: #173b77; --bs-btn-border-color: #173b77; --bs-btn-hover-bg: #173b77; --bs-btn-hover-border-color: #173b77; --bs-btn-active-bg: #112d5c; --bs-btn-active-border-color: #112d5c; }
+.nav-link.active { color: var(--brand) !important; font-weight: 600; border-bottom: 2px solid var(--brand); }
+.form-control:focus, .form-select:focus { border-color: #4a6fae; box-shadow: 0 0 0 0.2rem rgba(23, 59, 119, 0.2); }
+.card { border-color: #dde3ec; }
+.card-header { font-size: 0.95rem; }
+.logo-round { height: auto; max-width: 100%; } /* logo shown unmodified, aspect ratio preserved */
+.auth-body { background: var(--brand-tint); min-height: 100vh; }
+.auth-wrap { max-width: 440px; padding-top: 3rem; padding-bottom: 3rem; }
+code { color: var(--brand); background: var(--brand-tint); padding: 0.05rem 0.3rem; border-radius: 0.25rem; }
+.card { --bs-card-bg: #fff; }
+.form-control, .form-select { background-color: #fff; }
+.list-group-item-action { background-color: #fff; }
+/* Keep the top bar on one line: labels and buttons never wrap; below 1200px it collapses to the menu button. */
+.navbar .nav-link, .navbar .btn, .navbar .navbar-brand span, .navbar span.small { white-space: nowrap; }
+.navbar-brand { margin-right: 1rem; }
+.navbar-brand { margin-right: 1.75rem; }
+.navbar-brand span { font-size: 1.05rem; }

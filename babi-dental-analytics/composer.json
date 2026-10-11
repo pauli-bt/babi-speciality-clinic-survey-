@@ -1,0 +1,8 @@
+{
+  "name": "babi/dental-analytics",
+  "description": "Customer acquisition & marketing analytics for Babi Speciality Dental Clinic",
+  "type": "project",
+  "require": { "php": ">=8.2", "ext-pdo_mysql": "*", "ext-mbstring": "*" },
+  "autoload": { "psr-4": { "App\\": "app/" } },
+  "scripts": { "test": "bash tests/run.sh" }
+}
