@@ -1,0 +1,60 @@
+[2026-10-14T09:46:29+03:00] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'babi_app'@'localhost' (using password: YES) in Db.php:35
+[2026-10-14T09:46:52+03:00] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'babi_app'@'localhost' (using password: YES) in Db.php:35
+[2026-10-14T09:48:25+03:00] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'babi_app'@'localhost' (using password: YES) in Db.php:35
+[2026-10-14T09:53:20+03:00] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'babi_app'@'localhost' (using password: YES) in Db.php:35
+[2026-10-14T09:55:52+03:00] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'babi_app'@'localhost' (using password: YES) in Db.php:35
+[2026-10-14T10:01:45+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-14T10:02:52+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-14T10:07:42+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-14T12:03:51+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:06+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:07+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:09+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:10+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:37+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:38+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:41+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:42+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:43+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:44+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:45+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:46+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:04:50+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:05:21+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:05:22+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:06:08+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:06:10+03:00] Error: Call to undefined function request_is() in app.php:79
+[2026-10-14T12:09:16+03:00] Error: Call to undefined function request_is() in app.php:72
+[2026-10-14T12:09:19+03:00] Error: Call to undefined function request_is() in app.php:72
+[2026-10-14T23:44:01+03:00] PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in Db.php:35
+[2026-10-14T23:48:13+03:00] PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in Db.php:35
+[2026-10-15T00:09:10+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T00:09:12+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T00:09:14+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T00:14:15+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:02:47+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:02:49+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:02:51+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:04:03+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:04:04+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:04:42+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:04:57+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:04:57+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:05:07+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:05:10+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:05:12+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:05:33+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:06:32+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:06:38+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:06:42+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:06:45+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-15T22:12:58+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
+[2026-10-16T23:05:34+03:00] Error: Call to undefined method App\Helpers\Http::method() in index.php:29
+[2026-10-16T23:05:49+03:00] Error: Call to undefined method App\Helpers\Http::method() in index.php:29
+[2026-10-16T23:06:00+03:00] Error: Call to undefined method App\Helpers\Http::method() in index.php:29
+[2026-10-16T23:06:14+03:00] Error: Call to undefined method App\Helpers\Http::method() in index.php:29
+[2026-10-16T23:13:40+03:00] ParseError: syntax error, unexpected token "public" in Http.php:12
+[2026-10-16T23:14:53+03:00] Error: Call to undefined method App\Helpers\Http::method() in index.php:29
+[2026-10-16T23:14:55+03:00] Error: Call to undefined method App\Helpers\Http::method() in index.php:29
+[2026-10-16T23:14:59+03:00] Error: Call to undefined method App\Helpers\Http::method() in index.php:29
+[2026-10-17T00:07:41+03:00] ParseError: syntax error, unexpected identifier "string", expecting variable in AnalyticsRange.php:20
