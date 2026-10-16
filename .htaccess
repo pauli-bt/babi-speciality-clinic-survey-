@@ -1,0 +1,19 @@
+# Defence in depth for Apache/XAMPP installs where the project folder itself (not public/) is reachable from the web,
+# e.g. http://localhost/babi-dental-analytics/ under htdocs. Only public/ may be served; everything else
+# (.env, app/, config/, storage/, database/, tests/, bin/, docs/, README) is refused.
+# Best practice remains: point the virtual host's DocumentRoot at public/ (see README).
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(?!public/).* - [F,L]
+</IfModule>
+<IfModule !mod_rewrite.c>
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</IfModule>
+<FilesMatch "^\.(env|git|htpasswd)">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+Options -Indexes
