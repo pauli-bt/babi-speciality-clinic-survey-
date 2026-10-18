@@ -17,10 +17,10 @@ final class AnalyticsRange
     public const MAX_DAYS = 1095;
 
     public function __construct(
-        public readonly string $preset,
-        public readonly DateTimeImmutable $from,
-        public readonly DateTimeImmutable $to,
-        public readonly array $errors = [],
+        public string $preset,
+        public DateTimeImmutable $from,
+        public DateTimeImmutable $to,
+        public array $errors = [],
     ) {
     }
 
