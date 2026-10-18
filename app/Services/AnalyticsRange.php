@@ -16,12 +16,17 @@ final class AnalyticsRange
     public const DEFAULT = 'last30';
     public const MAX_DAYS = 1095;
 
-    public function __construct(
-        public string $preset,
-        public DateTimeImmutable $from,
-        public DateTimeImmutable $to,
-        public array $errors = [],
-    ) {
+    public string $preset;
+    public DateTimeImmutable $from;
+    public DateTimeImmutable $to;
+    public array $errors;
+
+    public function __construct(string $preset, DateTimeImmutable $from, DateTimeImmutable $to, array $errors = [])
+    {
+        $this->preset = $preset;
+        $this->from = $from;
+        $this->to = $to;
+        $this->errors = $errors;
     }
 
     /** @param array<string, mixed> $q */
