@@ -7,12 +7,13 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli \
 # Copy project files
 COPY . /var/www/html/
 
-# Create a writable session directory and grant ownership to www-data
-RUN mkdir -p /tmp/sessions \
-    && chown -R www-data:www-data /tmp/sessions \
-    && chmod -R 773 /tmp/sessions
+# Create system & app-level session/storage paths and grant full write access to www-data
+RUN mkdir -p /tmp/sessions /var/www/html/storage/framework/sessions /var/www/html/storage/logs \
+    && chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 /var/www/html \
+    && chmod -R 777 /tmp/sessions
 
-# Point PHP session save path to the writable directory
+# Override PHP session save path globally
 RUN echo "session.save_path = \"/tmp/sessions\"" > /usr/local/etc/php/conf.d/sessions.ini
 
 # Point Apache to public subfolder
