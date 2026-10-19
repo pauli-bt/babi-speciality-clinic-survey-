@@ -40,21 +40,15 @@ final class Http
 
     /** Never show PHP warnings, notices or paths to the browser (XAMPP's default php.ini has display_errors=On); log them instead. */
     public static function hardenRuntime(): void
-    {
-        ini_set('display_errors', '0');
-        ini_set('display_startup_errors', '0');
-        ini_set('html_errors', '0');
-        ini_set('log_errors', '1');
-        $dir = BASE_PATH . '/storage/logs';
-        if (!is_dir($dir)) {
-            @mkdir($dir, 0700, true);
-        }
-        if (is_dir($dir) && is_writable($dir)) {
-            ini_set('error_log', $dir . '/php-error.log');
-        }
-        error_reporting(E_ALL);
-    }
+{
+    ini_set('display_errors', '0');
+    ini_set('display_startup_errors', '0');
+    ini_set('html_errors', '0');
+    ini_set('log_errors', '1');
+    ini_set('error_log', 'php://stderr');
 
+    error_reporting(E_ALL);
+}
     public static function isSecure(): bool
     {
         if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
