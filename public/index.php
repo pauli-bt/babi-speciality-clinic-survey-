@@ -11,7 +11,10 @@ set_exception_handler(static function (Throwable $t): void {
     if (!is_dir($dir)) {
         @mkdir($dir, 0700, true);
     }
-    @file_put_contents($dir . '/app.log', sprintf("[%s] %s: %s in %s:%d\n", date('c'), get_class($t), $t->getMessage(), basename($t->getFile()), $t->getLine()), FILE_APPEND | LOCK_EX);
+    $entry = sprintf("[%s] %s: %s in %s:%d", date('c'), get_class($t), $t->getMessage(), basename($t->getFile()), $t->getLine());
+    @file_put_contents($dir . '/app.log', $entry . "\n", FILE_APPEND | LOCK_EX);
+    // Render captures PHP error_log output, while the browser still receives only a generic message.
+    error_log('[babi] ' . $entry);
     if (!headers_sent()) {
         http_response_code(500);
     }
