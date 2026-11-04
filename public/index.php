@@ -18,6 +18,15 @@ set_exception_handler(static function (Throwable $t): void {
     if (!headers_sent()) {
         http_response_code(500);
     }
+    // Temporary troubleshooting aid: set APP_DEBUG=1 in the hosting environment to see the real error in the browser.
+    // Leave it unset (or 0) in normal use, because error text can reveal server details.
+    if (Env::get('APP_DEBUG') === '1') {
+        if (!headers_sent()) {
+            header('Content-Type: text/plain; charset=utf-8');
+        }
+        echo "DEBUG MODE (remove APP_DEBUG when done)\n" . $entry . "\n";
+        exit;
+    }
     echo 'Something went wrong. Please try again or contact the administrator.';
     exit;
 });
