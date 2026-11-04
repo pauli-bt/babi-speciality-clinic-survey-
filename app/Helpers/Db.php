@@ -46,6 +46,29 @@ final class Db
      */
     private static function tlsOptions(): array
     {
-        if (Env::get('DB_SSL') !== '1') {
+        if (!in_array(strtolower(trim((string) Env::get('DB_SSL', '0'))), ['1', 'true', 'yes', 'on'], true)) {
             return [];
         }
+        $ca = trim((string) Env::get('DB_SSL_CA', ''));
+        if ($ca !== '' && is_readable($ca)) {
+            // Encrypted and the server certificate is verified against the CA file (Aiven: download "CA certificate" from the service page).
+            return [
+                PDO::MYSQL_ATTR_SSL_CA => $ca,
+                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => true,
+            ];
+        }
+        if ($ca !== '') {
+            error_log('[babi] DB_SSL_CA is set but the file is not readable: ' . $ca . ' (falling back to encryption without certificate verification)');
+        }
+        // Encrypted but not verified: the system CA bundle only switches TLS on, verification is turned off.
+        foreach (['/etc/ssl/certs/ca-certificates.crt', '/etc/pki/tls/certs/ca-bundle.crt'] as $bundle) {
+            if (is_readable($bundle)) {
+                return [
+                    PDO::MYSQL_ATTR_SSL_CA => $bundle,
+                    PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+                ];
+            }
+        }
+        return [PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false];
+    }
+}
