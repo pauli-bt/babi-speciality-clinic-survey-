@@ -36,6 +36,13 @@ Http::enforceHttps();
 Session::start();
 Http::securityHeaders();
 
+// One-time setup page for hosts without a terminal. Does nothing unless SETUP_TOKEN is set and matches ?token=.
+if (Http::path() === '/__setup' && \App\Services\WebSetup::authorised()) {
+    header('Content-Type: text/plain; charset=utf-8');
+    echo \App\Services\WebSetup::run() . "\n\nDone. Now remove SETUP_TOKEN and BABI_ADMIN_PASSWORD from the hosting variables.\n";
+    exit;
+}
+
 /** @var App\Helpers\Router $router */
 $router = require BASE_PATH . '/config/routes.php';
 $router->dispatch(Http::method(), Http::path());
