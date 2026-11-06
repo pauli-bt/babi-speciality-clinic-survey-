@@ -34,8 +34,8 @@ if ($u) {
 </head>
 <body>
 
-<nav class="navbar navbar-expand-xl bg-white border-bottom py-2">
-  <div class="container-fluid px-4 px-xl-5">
+<nav class="navbar <?= count($nav) > 7 ? 'navbar-expand-xxl' : 'navbar-expand-xl' ?> bg-white border-bottom py-2">
+  <div class="container-fluid px-3 px-xxl-4">
     <!-- Brand / Logo (Left) -->
     <a class="navbar-brand d-flex align-items-center py-1 me-0" href="/">
       <img src="/assets/images/babi-logo.png" alt="Babi Dental" width="34" height="34" class="logo-round me-2">

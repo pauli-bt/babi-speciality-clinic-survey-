@@ -28,9 +28,13 @@ code { color: var(--brand); background: var(--brand-tint); padding: 0.05rem 0.3r
 .list-group-item-action { background-color: #fff; }
 /* Keep the top bar on one line: labels and buttons never wrap; below 1200px it collapses to the menu button. */
 .navbar .nav-link, .navbar .btn, .navbar .navbar-brand span, .navbar span.small { white-space: nowrap; }
-.navbar-brand { margin-right: 1rem; }
-.navbar-brand { margin-right: 1.75rem; }
-.navbar-brand span { font-size: 1.05rem; }
+/* Compact top bar: smaller logo, brand text and links so the whole bar fits without sideways scrolling. */
+.navbar { font-size: 0.875rem; }
+.navbar-brand { margin-right: 0.75rem; }
+.navbar-brand span { font-size: 0.95rem; }
+.navbar-brand .logo-round { width: 30px; height: 30px; }
+.navbar .nav-link { font-size: 0.85rem; padding-left: 0.4rem; padding-right: 0.4rem; }
+.navbar .dropdown-toggle { font-size: 0.8rem; }
 
 /* Phase 7: analytics (CSP-safe: sizes via classes, no inline styles) */
 .chart-box { position: relative; width: 100%; }
