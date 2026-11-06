@@ -32,7 +32,8 @@ final class Db
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES => false,
             // Keep NOW()/TIMESTAMPDIFF in the same clinic-local clock PHP uses.
-            PDO::MYSQL_ATTR_INIT_COMMAND => "SET time_zone = '" . Clock::mysqlOffset() . "'",
+            // SQL_BIG_SELECTS=1: shared hosts (e.g. InfinityFree) set a low max_join_size, which makes the multi-table list queries fail (error 1104).
+            PDO::MYSQL_ATTR_INIT_COMMAND => "SET time_zone = '" . Clock::mysqlOffset() . "', SQL_BIG_SELECTS = 1",
         ] + self::tlsOptions();
         return self::$conn[$key] = new PDO($dsn, (string) $user, (string) $pass, $options);
     }
