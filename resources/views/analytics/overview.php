@@ -63,5 +63,3 @@ $kpi = static function (string $label, $value, string $note, ?int $prev = null):
   </ul>
 </div>
 <?php endif; ?>
-
-</div><!-- Close container from _head.php -->

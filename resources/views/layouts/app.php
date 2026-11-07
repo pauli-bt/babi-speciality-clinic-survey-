@@ -65,7 +65,6 @@ if ($u) {
         <ul class="navbar-nav mb-0 align-items-xl-center">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle d-flex align-items-center gap-1 py-1 px-2 rounded bg-light border text-dark small" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="bi bi-person-circle text-primary"></i>
               <span class="fw-medium"><?= e($u['name'] ?? 'User') ?></span>
               <span class="text-muted small ms-1">(<?= e($u['role_name'] ?? 'User') ?>)</span>
             </a>
@@ -77,16 +76,14 @@ if ($u) {
                 </div>
               </li>
               <li>
-                <a class="dropdown-item py-1.5" href="/password/change">
-                  <i class="bi bi-key me-2 text-secondary"></i>Change password
+                <a class="dropdown-item py-1.5" href="/password/change">Change password
                 </a>
               </li>
               <li><hr class="dropdown-divider my-1"></li>
               <li>
                 <form method="post" action="/logout" class="m-0 p-0">
                   <?= Csrf::field() ?>
-                  <button class="dropdown-item py-1.5 text-danger" type="submit">
-                    <i class="bi bi-box-arrow-right me-2"></i>Sign out
+                  <button class="dropdown-item py-1.5 text-danger" type="submit">Sign out
                   </button>
                 </form>
               </li>
@@ -97,7 +94,7 @@ if ($u) {
     <?php endif; ?>
   </div>
 </nav>
-<main class="container-xl py-4">
+<main class="page-shell container-fluid px-3 px-xl-5 py-4">
   <?php foreach (\App\Helpers\Http::pullFlash() as $f): ?>
     <div class="alert alert-<?= e($f['type']) ?>" role="alert"><?= e($f['message']) ?></div>
   <?php endforeach; ?>

@@ -1,4 +1,3 @@
-<div class="container-fluid px-4 px-xl-5 py-4">
   <!-- Dashboard Header -->
   <div class="mb-4">
     <h1 class="h4 fw-bold text-brand mb-1">Administrator dashboard</h1>
@@ -77,10 +76,10 @@
     </div>
   </div>
 
-  <!-- Lower Section: Tables & Build Status -->
+  <!-- Lower Section: Tables -->
   <div class="row g-4">
     <!-- User Accounts by Role (Exact original $roleCounts loop and routes) -->
-    <div class="col-lg-6">
+    <div class="col-lg-8 col-xl-6">
       <div class="card border-0 shadow-sm h-100">
         <div class="card-header bg-white py-3 border-bottom fw-semibold">User accounts by role</div>
         <div class="table-responsive">
@@ -111,20 +110,4 @@
         </div>
       </div>
     </div>
-
-    <!-- Build Status (Exact original content & links) -->
-    <div class="col-lg-6">
-      <div class="card border-0 shadow-sm h-100">
-        <div class="card-header bg-white py-3 border-bottom fw-semibold">Build status</div>
-        <div class="card-body small p-4">
-          <p class="mb-3">
-            <span class="badge text-bg-success px-2 py-1">Available</span> Sign-in, roles, users, audit log, customers, questionnaires, services, campaigns, appointments, <a href="/analytics" class="text-decoration-none fw-medium">analytics</a>.
-          </p>
-          <p class="mb-0">
-            <span class="badge text-bg-secondary px-2 py-1">Not built yet</span> Exports and reports.
-          </p>
-        </div>
-      </div>
-    </div>
   </div>
-</div>

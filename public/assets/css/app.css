@@ -44,7 +44,7 @@ code { color: var(--brand); background: var(--brand-tint); padding: 0.05rem 0.3r
 .kpi .kpi-note { font-size: .72rem; color: #6c757d; }
 .delta-up { color: #146c43; } .delta-down { color: #b02a37; } .delta-flat { color: #6c757d; }
 .analytics-tabs .nav-link { color: var(--brand); }
-.analytics-tabs .nav-link.active { background: var(--brand); color: #fff; }
+.analytics-tabs .nav-link.active { background: var(--brand) !important; color: #fff !important; }
 /* Paste at the very bottom of app.css */
 .table {
     border-collapse: separate;
@@ -60,7 +60,7 @@ code { color: var(--brand); background: var(--brand-tint); padding: 0.05rem 0.3r
 }
 
 .table td {
-    padding: 1rem 0.75rem;
+    padding: 0.7rem 0.75rem;
     color: #2b3445;
     border-bottom: 1px solid #f1f3f9;
     vertical-align: middle;
@@ -69,12 +69,19 @@ code { color: var(--brand); background: var(--brand-tint); padding: 0.05rem 0.3r
 .table-hover tbody tr:hover {
     background-color: #f8fafc;
 }
-/* Phase 8: print-friendly reports (preserved during UI merge) */
-.print-body { background: #fff; }
+/* One page shell for every screen: same width and side padding everywhere. */
+.page-shell { max-width: 1480px; }
+
+/* Data tables in analytics and reports: compact, numbers aligned, header tinted. */
+.table.table-sm td, .table.table-sm th { padding: 0.4rem 0.6rem; }
+.table.table-sm td { font-size: 0.875rem; }
+.table.table-sm th { font-size: 0.72rem; text-transform: uppercase; }
+.report-table td.num, .report-table th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.report-table tbody tr:nth-child(even) td { background-color: #fafbfd; }
+.report-section .section-title { font-size: 0.95rem; font-weight: 600; color: var(--brand); margin: 0; }
+
 @media print {
   .no-print, nav.navbar { display: none !important; }
   .report-section { break-inside: avoid; }
-  .table { font-size: 10pt; }
   a[href]:after { content: none !important; }
-  @page { margin: 12mm; }
 }

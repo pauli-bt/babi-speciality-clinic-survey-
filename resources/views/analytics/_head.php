@@ -9,8 +9,7 @@ $tabs = [
     'appointments' => ['Appointments & services', '/analytics/appointments']
 ];
 ?>
-<div class="container-fluid px-4 px-xl-5 py-4">
-  <!-- Page Title -->
+<!-- Page Title -->
   <div class="d-flex align-items-center justify-content-between mb-3">
     <h1 class="h4 fw-bold text-brand mb-0"><?= e($title) ?></h1>
   </div>
@@ -20,8 +19,7 @@ $tabs = [
     <ul class="nav nav-pills analytics-tabs flex-wrap gap-2">
       <?php foreach ($tabs as $k => [$label, $href]): ?>
         <li class="nav-item">
-          <a class="nav-link px-3 py-2 rounded-2 fw-medium text-decoration-none <?= $tab === $k ? 'bg-primary text-white shadow-sm' : 'text-dark bg-light' ?>" 
-             style="<?= $tab === $k ? 'background-color: #173b77 !important; color: #ffffff !important;' : '' ?>"
+          <a class="nav-link px-3 py-2 rounded-2 fw-medium text-decoration-none <?= $tab === $k ? 'active shadow-sm' : 'text-dark bg-light' ?>"
              href="<?= e($href . '?' . $qs) ?>">
             <?= e($label) ?>
           </a>

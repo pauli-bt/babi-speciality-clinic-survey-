@@ -1,0 +1,45 @@
+/* Report print view: a clean A4 document on screen and in the PDF. CSP-safe (no inline styles). */
+:root { --brand: #173b77; --tint: #e8eef8; --ink: #1f2937; --muted: #5b6573; --line: #d5dce8; }
+.print-body { background: #eef1f6; color: var(--ink); font-size: 0.9rem; }
+.print-toolbar { position: sticky; top: 0; z-index: 5; background: #fff; border-bottom: 1px solid var(--line); padding: 0.6rem 1rem; }
+.print-toolbar-inner { max-width: 210mm; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.print-hint { font-size: 0.8rem; color: var(--muted); }
+.sheet { max-width: 210mm; margin: 1.25rem auto 2rem; background: #fff; padding: 14mm; box-shadow: 0 1px 10px rgba(23, 59, 119, 0.14); }
+
+.doc-header { display: flex; align-items: center; gap: 0.75rem; padding-bottom: 0.7rem; border-bottom: 2px solid var(--brand); margin-bottom: 1rem; }
+.doc-header .logo-round { width: 46px; height: 46px; border-radius: 50%; }
+.doc-clinic { font-size: 1.05rem; font-weight: 700; color: var(--brand); line-height: 1.2; }
+.doc-sub { font-size: 0.78rem; color: var(--muted); }
+.doc-confidential { margin-left: auto; text-align: right; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand); }
+.doc-confidential span { font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
+
+.report-title { font-size: 1.45rem; font-weight: 700; color: var(--brand); margin: 0 0 0.6rem; }
+.report-meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.75rem; background: var(--tint); border-radius: 6px; padding: 0.6rem 0.9rem; margin-bottom: 0.8rem; }
+.report-meta div { display: flex; flex-direction: column; }
+.report-meta span { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.report-meta strong { font-size: 0.85rem; font-weight: 600; }
+.report-notes { border-left: 3px solid var(--brand); background: #f7f9fc; padding: 0.5rem 0.8rem; font-size: 0.8rem; color: #374151; margin-bottom: 1.1rem; }
+.report-notes div + div { margin-top: 0.2rem; }
+
+.report-doc .section-title { font-size: 0.95rem; padding-bottom: 0.25rem; border-bottom: 1px solid var(--line); }
+.report-doc .report-table { border-color: var(--line); margin-bottom: 0.25rem; }
+.report-doc .report-table th { background: var(--brand) !important; color: #fff !important; border-color: var(--brand) !important; font-size: 0.68rem; letter-spacing: 0.04em; }
+.report-doc .report-table td { border-color: var(--line) !important; padding: 0.3rem 0.55rem; }
+.doc-footer { margin-top: 1.4rem; padding-top: 0.5rem; border-top: 1px solid var(--line); font-size: 0.72rem; color: var(--muted); }
+
+@page { size: A4; margin: 13mm 12mm 15mm; }
+@page wide { size: A4 landscape; margin: 12mm 11mm 14mm; }
+@page { @bottom-right { content: "Page " counter(page) " of " counter(pages); font-size: 8pt; color: #6b7280; } }
+
+@media print {
+  .print-body { background: #fff; font-size: 9.5pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .no-print { display: none !important; }
+  .sheet { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  .report-doc.is-wide { page: wide; }
+  .table-responsive { overflow: visible !important; }
+  .report-section { break-inside: avoid; margin-bottom: 1rem !important; }
+  .report-table thead { display: table-header-group; }
+  .report-table tr { break-inside: avoid; }
+  .report-title { font-size: 17pt; }
+  .report-table td, .report-table th { font-size: 8.5pt; }
+}
